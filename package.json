@@ -1,0 +1,36 @@
+{
+  "name": "@liqd-js/client-jsonrpc",
+  "description": "JSONRPC client",
+  "version": "0.0.2",
+  "author": "radixxko",
+  "license": "MIT",
+  "main": "lib/client_jsonrpc.js",
+  "files": [
+    "lib/"
+  ],
+  "scripts": {
+    "test": "nyc mocha",
+    "coverage": "nyc report --reporter=text-lcov | coveralls"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/liqd-js/client-jsonrpc.git"
+  },
+  "keywords": [
+    "jsonrpc",
+    "client",
+    "liqd-js",
+    "liqd"
+  ],
+  "dependencies": {
+    "@liqd-js/options": "^1.0.1",
+    "@liqd-js/timed-promise": "^1.0.2",
+    "@liqd-js/unique-id": "^1.0.0"
+  },
+  "devDependencies": {
+    "@liqd-js/websocket": "^1.0.0",
+    "coveralls": "^3.0.6",
+    "mocha": "^5.2.0",
+    "nyc": "^14.1.1"
+  }
+}
