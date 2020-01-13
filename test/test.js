@@ -10,13 +10,13 @@ server.on( 'client', client =>
 {
     let client_jsonrpc = new Client_JSONRPC( client );
 
-    client_jsonrpc.on( 'call', async( id, method, params ) => 
+    client_jsonrpc.on( 'call', async ( call ) => 
     {
-        console.log( 'call', { id, method, params });
+        console.log( 'call',  call );
 
         await SLEEP( 1000 );
 
-        client_jsonrpc.result( id, params[0] + params[1] );
+        client_jsonrpc.result( call.id, call.params[0] + call.params[1] );
     });
 
     client.on( 'close', NOOP );
@@ -25,6 +25,6 @@ server.on( 'client', client =>
 
 const client = new Client_JSONRPC('ws://localhost:8080');
 
-client.call( 'sum', 1, 2 ).then( console.log );
-client.call( 'sum', 3, 2 ).then( console.log );
-client.call( 'sum', 4, 3 ).then( console.log );
+client.call( 'sum', [ 1, 2 ] ).then( console.log );
+client.call( 'sum', [ 3, 2 ], { foo: 'bar' } ).then( console.log );
+client.call( 'sum', [ 4, 3 ] ).then( console.log );

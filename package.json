@@ -1,7 +1,7 @@
 {
   "name": "@liqd-js/client-jsonrpc",
   "description": "JSONRPC client",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "radixxko",
   "license": "MIT",
   "main": "lib/client_jsonrpc.js",
